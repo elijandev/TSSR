@@ -1,1 +1,71 @@
+🛡️ Les Listes de Contrôle d’Accès (ACL)
 
+
+
+Une Liste de Contrôle d’Accès (ACL) est constituée de règles qui permettent ou refusent l’accès à un environnement informatique.
+
+
+
+ ACL Réseau 🌐
+
+Les ACL réseau gèrent l’accès à une infrastructure. Elles fournissent des instructions aux commutateurs et routeurs sur les types de trafic autorisés à circuler. Elles dictent également ce que chaque utilisateur ou appareil peut faire une fois à l’intérieur du réseau.
+
+Dans mon lab, j’ai configuré deux types d'ACL :
+
+
+
+1️⃣ ACL Standard 
+
+◽ Fonctionnement : Elle bloque une source réseau ou une adresse IP source uniquement. Il n'y a pas de configuration de destination.
+
+◽Placement : Elle s’applique le plus près possible de la destination.
+
+◽Plage de numéros : 1-99 et 1300-1999.
+
+◽Syntaxe : access-list [numéro] [permit/deny] [adresse IP source]/[adresse source réseau] [masque générique]
+
+
+
+2️⃣ ACL Étendue 
+
+◽Fonctionnement : Elle filtre les paquets de manière beaucoup plus précise en utilisant l’adresse source, l’adresse destination, le protocole (TCP/UDP/ICMP..) et le numéro de port.
+
+◽Placement : Elle s’applique le plus près possible de la source.
+
+◽Plage de numéros : 100-199 et 2000-2699.
+
+◽Syntaxe : access-list [numéro] [permit/deny] [protocole] [IP source] [wildcard source] [IP dest] [wildcard dest] [port]
+
+  
+
+
+
+ 💡 Petit rappel sur le Masque Générique (Wildcard Mask)
+
+Un masque générique est une chaîne de 32 chiffres binaires utilisée par le routeur pour déterminer quels bits de l'adresse examiner afin d'établir une correspondance.
+
+Exemple : 192.168.1.0/26
+
+Il y a 6 bits pour les hôtes.
+
+Le masque de sous-réseau est : 255.255.255.192
+
+🅰️ Méthode 1 (Binaire) : On inverse les bits de masque . Les "1" deviennent des "0" et les "0" deviennent des "1". On obtient ainsi 
+
+255.255.255.192 en binaire 
+
+11111111.11111111.11111111.11000000
+
+00000000.00000000.00000000.00111111
+
+0.0.0.63.
+
+Commande : access-list 10 deny 192.168.1.0 0.0.0.63
+
+🅱️ Méthode 2 (Soustraction - La plus simple) : On soustrait le masque de sous-réseau de 
+
+- 255.255.255.255
+
+   255.255.255.192
+
+	0    .      0.     0.63
