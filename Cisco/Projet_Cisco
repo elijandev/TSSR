@@ -1,0 +1,10 @@
+🚀 Redondance et Haute Disponibilité avec Cisco
+🛠️ Technologies & Protocoles implémentés :
+•	Haute Disponibilité (HSRP) : Mise en place d'une redondance de passerelle entre deux switch L3, En cas de panne du commutateur principal (SW1_L3), le secondaire (SW2_L3) prend le relais instantanément grâce à une IP virtuelle commune.
+•	Agrégation de liens (EtherChannel LACP)
+agréger les liens physiques, augmentant ainsi la bande passante tout en assurant une redondance au niveau des interfaces.
+Convergence Rapide (RSTP) : Configuration du mode rapid-pvst pour minimiser les temps de recalcul de la topologie et éviter les boucles réseau
+Routage Inter-VLAN : Gestion de 4 VLANs distincts via des interfaces virtuelles commutées (SVI) sur les switches multi-couches, permettant une communication fluide et sécurisée entre les différents départements.
+Dans la prochaine étape de mon projet, je vais configurer les règles ACL, les serveurs DHCP, Web, DNS et Syslog, ainsi que le protocole SNMP.
+
+Vous pouvez trouver le fichier PKT sur mon compte GitHub (le lien est en commentaire). J’aimerais que quelqu’un me donne des conseils pour améliorer mon projet.
