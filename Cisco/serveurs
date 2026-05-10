@@ -1,0 +1,28 @@
+🚀 Projet Cisco Packet Tracer — 
+
+En fin de formation TSSR, j'ai réalisé un lab complet intégrant les technologies suivantes :
+
+🔧 Infrastructure réseau
+• EtherChannel (LACP) — agrégation de liens pour la redondance et la bande passante
+• RSTP — convergence rapide et élimination des boucles
+• VLANs + Trunks — segmentation du réseau
+• Routage inter-VLAN via SVI sur switches L3
+• HSRP — redondance de passerelle entre deux switches multicouches
+
+🖥️ Infrastructure serveurs (VLAN 80 dédié — 192.168.80.0/28)
+• Serveur DHCP centralisé avec relay agent — attribution IP automatique pour les VLANs 10, 20, 30, 40
+• Serveur WEB — hébergement du site techtok.fr
+• Serveur DNS — résolution du nom de domaine techtok.fr
+• Serveur FTP — transfert de fichiers
+• Serveur NTP — synchronisation de l'heure sur tous les équipements pour des logs cohérents
+• Serveur Syslog — centralisation des logs pour faciliter le travail de l'admin système
+
+💡 Ce que ce projet m'a vraiment appris
+
+Le plus difficile n'est pas de créer un réseau de A à Z dans un lab. Le vrai défi, c'est d'intégrer un nouvel équipement dans un réseau déjà en production en gardant toutes les fonctionnalités existantes.
+
+Chaque ajout (le VLAN 80, les serveurs, le DHCP centralisé) m'a obligé à comprendre les dépendances entre EtherChannel, RSTP, HSRP et les trunks.
+
+🎯 Prochaines étapes : ACL, SSH, NAT et OSPF
+
+#TSSR #Cisco #Réseau #PacketTracer #HSRP #DHCP #Infrastructure #Cybersécurité #FormationIT
