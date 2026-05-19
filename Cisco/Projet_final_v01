@@ -1,0 +1,41 @@
+Titre : 🛠️ Projet TSSR : Infrastructure réseau & sécurité multi-sites de A à Z
+
+Bonjour le réseau ! 👋
+
+Je vous partage l'aboutissement d'un projet d'envergure réalisé durant ma formation TSSR. L'objectif : concevoir, simuler et sécuriser l'architecture informatique d'une entreprise (Site principal, DMZ et agence distante).
+
+🚀 Technologies implémentées :
+
+🌐 Routage & WAN : OSPF multi-area (Area 0, 1, 2) avec Load Balancing (ECMP) sur liens redondants.
+
+🛡️ Sécurité : Cisco ASA 5506 pour isoler et filtrer les flux d'une zone DMZ (serveurs DNS, DHCP, Web, FTP).
+
+⚖️ Haute Disponibilité : HSRP (redondance passerelle), RSTP (Rapid-PVST+) et EtherChannel (agrégation). Zéro point de panne unique !
+
+🎙️ VoIP : Cisco CME centralisé. Les IP Phones distants s'enregistrent via l'interface Loopback du routeur principal.
+
+⚙️ Services : Serveur DHCP unique en DMZ distribuant les IPs via relais (ip helper-address).
+
+🔍 Validation en 7 étapes clés :
+1️⃣ DHCP : Attribution IP dynamique fonctionnelle à travers l'ASA.
+2️⃣ Ping : Connectivité de bout en bout validée via OSPF.
+3️⃣ HSRP : Simulation de panne avec bascule transparente.
+4️⃣ DNS : Résolution de noms de domaine locale opérationnelle.
+5️⃣ HTTP/Web : Accès sécurisé à la page d'accueil (HTML/CSS perso).
+6️⃣ VoIP : Établissement d'appels et routage des flux (SCCP/RTP).
+7️⃣ SSH : Administration à distance sécurisée et chiffrée.
+
+💡 Retex & Leçons apprises :
+
+La documentation est une arme : Noter l'adressage au fur et à mesure et sauvegarder (write mem) évite de perdre des heures.
+
+Le piège des détails : J'ai cherché une panne pendant 2 jours pour un simple oubli de nommage de VLAN sur le switch DMZ.
+
+Vérifier, vérifier, vérifier : Les commandes show ip route et show run sont indispensables à chaque étape.
+
+🌱 Prochaines étapes :
+Place maintenant aux modules Virtualisation, Linux et Scripting (Bash / PowerShell) pour préparer mon examen final. Pour mon projet de fin d'études, je monterai d'un cran sur GNS3 ou PNetLab pour émuler de vrais équipements de production !
+
+Je suis preneur de vos avis techniques en commentaires ! 👇
+
+#Réseau #Sécurité #Cisco #TSSR #VoIP #OSPF #HSRP #PacketTracer #GNS3 #Linux #Scripting
